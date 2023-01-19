@@ -60,11 +60,17 @@ const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 // should return: 57
 
 function sum(arrayOfAnyType) {
+
   let sumOfNumbers = 0;
   let sumOfWords = 0;
   let sumOfBooleans = 0;
 
   for (i = 0; i < arrayOfAnyType.length; i++) {
+    
+    // if (typeof arrayOfAnyType[i] !== "number" || typeof arrayOfAnyType[i] === "string" ||  typeof arrayOfAnyType[i] === "boolean") {
+    //   throw new Error('Parameter is not supported!');
+    // }
+
     if (typeof arrayOfAnyType[i] === "number") {
       sumOfNumbers += arrayOfAnyType[i];
     } else if (typeof arrayOfAnyType[i] === "string") {
@@ -168,30 +174,29 @@ function uniquifyArray(arrayOfWords) {
   return newArray;
   */
 
-  //méthode après indice donné par sebastian
-  
-  function uniquifyArray(arrayOfWords) {
+//méthode après indice donné par sebastian
 
-    if (arrayOfWords.length === 0) {
-      return null;
-    }
-    let newArray = [];
+function uniquifyArray(arrayOfWords) {
+  if (arrayOfWords.length === 0) {
+    return null;
+  }
+  let newArray = [];
 
-  for (let i = 0; i < arrayOfWords.length; i ++){
-    if(newArray.includes(arrayOfWords[i])){
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (newArray.includes(arrayOfWords[i])) {
       continue;
     } else {
       newArray.push(arrayOfWords[i]);
     }
-
   }
   return newArray;
-  
 }
 
 //uniquifyArray(wordsUnique);
 //console.log(wordsUnique);
-console.log(uniquifyArray(wordsUnique));
+//console.log(uniquifyArray(wordsUnique));
+
+
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -205,7 +210,23 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(arrayOfWords, wordToSearch) {
+  if (arrayOfWords.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (arrayOfWords.includes(wordToSearch)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+//console.log(doesWordExist(wordsFind,'buefkjd'));
+
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -222,7 +243,28 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrayOfWords, wordToSearch) {
+  if (arrayOfWords.length === 0) {
+    return 0;
+  }
+
+  let sum=0;
+  
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (arrayOfWords[i] === wordToSearch) {
+        sum += 1;
+    } 
+  }
+  return sum;
+}
+
+console.log(howManyTimes(wordsCount,'matter'));
+
+
+
+
+
+
 
 // Iteration #8: Bonus
 const matrix = [
