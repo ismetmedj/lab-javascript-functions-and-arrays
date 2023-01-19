@@ -60,13 +60,11 @@ const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 // should return: 57
 
 function sum(arrayOfAnyType) {
-
   let sumOfNumbers = 0;
   let sumOfWords = 0;
   let sumOfBooleans = 0;
 
   for (i = 0; i < arrayOfAnyType.length; i++) {
-    
     // if (typeof arrayOfAnyType[i] !== "number" || typeof arrayOfAnyType[i] === "string" ||  typeof arrayOfAnyType[i] === "boolean") {
     //   throw new Error('Parameter is not supported!');
     // }
@@ -196,8 +194,6 @@ function uniquifyArray(arrayOfWords) {
 //console.log(wordsUnique);
 //console.log(uniquifyArray(wordsUnique));
 
-
-
 // Iteration #6: Find elements
 const wordsFind = [
   "machine",
@@ -226,8 +222,6 @@ function doesWordExist(arrayOfWords, wordToSearch) {
 
 //console.log(doesWordExist(wordsFind,'buefkjd'));
 
-
-
 // Iteration #7: Count repetition
 const wordsCount = [
   "machine",
@@ -248,23 +242,17 @@ function howManyTimes(arrayOfWords, wordToSearch) {
     return 0;
   }
 
-  let sum=0;
-  
+  let sum = 0;
+
   for (let i = 0; i < arrayOfWords.length; i++) {
     if (arrayOfWords[i] === wordToSearch) {
-        sum += 1;
-    } 
+      sum += 1;
+    }
   }
   return sum;
 }
 
-console.log(howManyTimes(wordsCount,'matter'));
-
-
-
-
-
-
+console.log(howManyTimes(wordsCount, "matter"));
 
 // Iteration #8: Bonus
 const matrix = [
