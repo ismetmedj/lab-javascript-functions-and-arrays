@@ -64,10 +64,17 @@ function sum(arrayOfAnyType) {
   let sumOfWords = 0;
   let sumOfBooleans = 0;
 
+
+  if (typeof arrayOfAnyType[i] !== "number" && typeof arrayOfAnyType[i] === "string" &&  typeof arrayOfAnyType[i] === "boolean") {
+    try {
+      throw error;('Parameter is not supported!');
+    } catch {
+      console.log(error)
+    }
+ }
+
   for (i = 0; i < arrayOfAnyType.length; i++) {
-    // if (typeof arrayOfAnyType[i] !== "number" || typeof arrayOfAnyType[i] === "string" ||  typeof arrayOfAnyType[i] === "boolean") {
-    //   throw new Error('Parameter is not supported!');
-    // }
+    
 
     if (typeof arrayOfAnyType[i] === "number") {
       sumOfNumbers += arrayOfAnyType[i];
